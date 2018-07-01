@@ -7,11 +7,6 @@ const MyDeck = MyCards.concat(MyCards);
 const shuffleCards = shuffle(MyDeck);
 
 let openedCardsNum = 0;
-let cardOne = '';
-let cardOneParent = '';
-let cardTwo = '';
-let cardTwoParent = '';
-
 
 // const deck = document.querySelector(".deck");
 
@@ -49,7 +44,6 @@ const cardsI = document.querySelectorAll(".card i");
 
 const deckLi = document.querySelectorAll('.deck li');
 
-
 // Selecting a card + flip
 
 function listener(){
@@ -64,48 +58,15 @@ function listener(){
 }
 
 if(cardOne == false ){
-  cardOne = evt.target.firstElementChild.className;
-  cardOneParent = evt.target;
-  openedCardsNum += 1;
-} else {
-  cardTwo = evt.target.firstElementChild.className;
-  cardTwoParent = evt.target;
-  openedCardsNum += 1;
-}
+                    cardOne = evt.target.firstElementChild.className;
+                    cardOneParent = evt.target;
+                    openedCardsNum += 1;
+                }else{
+                    cardTwo = evt.target.firstElementChild.className;
+                    cardTwoParent = evt.target;
+                    openedCardsNum += 1;
+                }
 
-// Compare opened cards
-
-function cardClasses(){
-  if(openedCardsNum === 2){
-    if(cardTwo == cardOne){
-      matchedCards += 2;
-    }
-  } setTimeout(() => {
-    if(openedCardsNum === 2){
-      if(cardTwo == cardOne){
-        cardOneParent.className = 'card open match';
-        cardTwoParent.className = 'card open match';
-        openedCardsNum *= 0;
-        cardOne = '';
-        cardTwo = '';
-        cardOneParent = '';
-        cardTwoParent = '';
-      } else {
-        cardOneParent.className = 'card';
-        openedCardsNum *= 0;
-        cardTwoParent.className = 'card';
-        cardOne = '';
-        cardTwo = '';
-        cardOneParent = '';
-        cardTwoParent = '';
-      }
-    };
-  }, 1000);
-}
-
-// call functions
-
-cardClasses();
 listener();
 looping();
 
