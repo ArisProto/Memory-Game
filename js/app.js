@@ -58,8 +58,7 @@ function flip(){
       let targetClass = evt.target.className;
       if (timeStart === false) {
         timeStart = true;
-      } timer();
-      if(targetClass == "card" && HowManyTimes != 2){
+      } if(targetClass == "card" && HowManyTimes != 2){
         allCards[i].className = ('class', 'card open show');
       } if(firstCard == false ){
         firstCard = evt.target.firstElementChild.className;
@@ -108,17 +107,17 @@ function flip(){
 
 flip();
 loop();
+timer();
+
 
 // timer | used: Used: https://www.w3schools.com/js/js_timing.asp
 
 function timer() {
 	time = setInterval(function() {
-    setTimeout(() => {
-      seconds++;
-	    if (seconds === 60) {
-        minutes++;
-	      seconds = 0;
-	    } timeCounter.innerHTML = "<i class='fas fa-stopwatch'></i>" + " Timer: " + minutes + " min " + seconds + " sec" ;
-    }, 10);
-  }, 1000);
+		seconds++;
+		if (seconds === 60) {
+      minutes++;
+			seconds = 0;
+		} timeCounter.innerHTML = "<i class='fas fa-stopwatch'></i>" + " Timer: " + minutes + " min " + seconds + " sec" ;
+	}, 1000);
 }
