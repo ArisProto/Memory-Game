@@ -4,3 +4,37 @@
     margin-left: auto;
     margin-right: auto;
   }
+}
+
+@media screen and (max width: 850px) {
+  .deck .card {
+    height: 98px;
+    width: 98px;
+  }
+}
+
+@media screen and (max width: 720px) {
+  .deck .card {
+    height: 85px;
+    width: 85px;
+    margin: 15px;
+  }
+}
+
+@media screen and (max width: 610px) {
+  .deck .card {
+    height: 66px;
+    width: 66px;
+    border-radius: 20px;
+    margin: 15px;
+  }
+}
+
+@media screen and (max width: 500px) {
+  .deck .card {
+    height: 50px;
+    width: 50px;
+    border-radius: 20px;
+    margin: 14px;
+  }
+}
