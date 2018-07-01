@@ -40,13 +40,14 @@ function shuffle(array) {
 
 // Selecting a card + flip
 
-deck.addEventListener("click", function(event) {
-	if (event.target.nodeName === "LI") {
-		console.log(event.target.nodeName + " Has been clicked");
+deck.addEventListener("click", function(evt) {
+	if (evt.target.nodeName === "LI") {
+		console.log(evt.target.nodeName + " Has been clicked");
 		flipCard();
 	}
 	function flipCard() {
-		event.target.classList.add("flip");
+		evt.target.classList.add("flip");
+		addToOpened();
 	}
 
 
