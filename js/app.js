@@ -38,6 +38,7 @@ let secondParentCard = '';
 //setting variables for winning
 
 const winWindow = document.createElement('div');
+winWindow.setAttribute('class', 'win');
 
 let winBox = document.querySelector('.winBox');
 
