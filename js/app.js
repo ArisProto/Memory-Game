@@ -52,6 +52,7 @@ function listener(){
   }
 }
 
+listener();
 looping();
 
 
