@@ -34,7 +34,7 @@ function shuffle(array) {
 
 const cardsI = document.querySelectorAll(".card i");
     function looping(){
-        for(let i = 0; i < gameCards.length; i++){
+        for(let i = 0; i < MyDeck.length; i++){
             cardsI[i].setAttribute('class', shuffleCards[i]);
     }
 }
