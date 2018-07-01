@@ -58,8 +58,7 @@ function flip(){
       let targetClass = evt.target.className;
       if (timeStart === false) {
         timeStart = true;
-      } setTimeout(timer(),1000000000);
-      if(targetClass == "card" && HowManyTimes != 2){
+      } if(targetClass == "card" && HowManyTimes != 2){
         allCards[i].className = ('class', 'card open show');
       } if(firstCard == false ){
         firstCard = evt.target.firstElementChild.className;
@@ -98,10 +97,9 @@ function flip(){
             }
           };
         }, 500);
-      }
-      doTheyMatch();
+      } doTheyMatch();
     })
-  }
+  } timer();
 }
 
 // Calling the functions
