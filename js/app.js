@@ -44,6 +44,13 @@ function shuffle(array) {
 
 bothCards = shuffleArray(bothCards);
 
+document.addEventListener("load", function() {
+
+  for (let i = 0; i < frontSides.length; i++) {
+    frontSides[i].className += " " + bothCards[i];
+  };
+}, true);
+
 // Selecting a card + flip
 
 for (let i = 0; i < backSides.length; i++) {
