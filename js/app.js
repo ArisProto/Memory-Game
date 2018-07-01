@@ -104,6 +104,7 @@ function flip(){
         }, 500);
       }
       doTheyMatch();
+      movesCounter();
     })
   }
 }
