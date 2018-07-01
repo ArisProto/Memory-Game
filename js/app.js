@@ -2,7 +2,7 @@
 * Create a list that holds all of your cards
 */
 
-let cards = [
+const cards = [
    "fas fa-ambulance",
    "fas fa-fighter-jet",
    "fas fa-anchor",
