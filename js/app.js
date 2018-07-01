@@ -98,8 +98,8 @@ function flip(){
           };
         }, 500);
       } doTheyMatch();
-    })
-  } timer();
+    } timer();)
+  }
 }
 
 // Calling the functions
