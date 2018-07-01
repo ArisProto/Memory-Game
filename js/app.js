@@ -10,7 +10,7 @@ const timeCounter = document.querySelector(".timer");
 let time;
 let minutes = 0;
 let seconds = 0;
-let startTime = false;
+let timeStart = false;
 
 // setting variables for flipping and matching
 
