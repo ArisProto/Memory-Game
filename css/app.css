@@ -54,7 +54,7 @@ h1 {
 .front {
   height: 125px;
   width: 125px;
-  background: #2e3d49;
+  background: #2d5371;
   font-size: 0;
   color: #ffffff;
   border-radius: 8px;
@@ -71,7 +71,7 @@ h1 {
 .back {
   height: 125px;
   width: 125px;
-  background: #2e3d49;
+  background: #1b2833;
   font-size: 0;
   color: #ffffff;
   border-radius: 8px;
