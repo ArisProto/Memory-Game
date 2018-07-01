@@ -5,6 +5,9 @@
 const MyCards = ["fas fa-ambulance", "fas fa-fighter-jet", "fas fa-anchor","fas fa-child", "fas fa-chess-knight", "fas fa-archway", "fas fa-feather", "far fa-graduation-cap"];
 const MyDeck = MyCards.concat(MyCards);
 const shuffleCards = shuffle(MyDeck);
+
+let openedCardsNum = 0;
+
 // const deck = document.querySelector(".deck");
 
 /*
