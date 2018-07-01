@@ -107,7 +107,7 @@ function flip(){
               firstParentCard = '';
               secondParentCard = '';
             }
-          }
+          };
         }, 500);
       }
       doTheyMatch();
