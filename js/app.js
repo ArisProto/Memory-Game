@@ -1,4 +1,4 @@
-// setting variables for deckcards
+// setting variables for Deckcards
 
 const MyCards = ["fas fa-ambulance", "fas fa-fighter-jet", "fas fa-anchor","fas fa-child", "fas fa-chess-knight", "fas fa-archway", "fas fa-feather", "fas fa-dove"];
 const MyDeck = MyCards.concat(MyCards);
@@ -12,10 +12,15 @@ let minutes = 0;
 let seconds = 0;
 let timeStart = false;
 
-// setting variables for move movecounter
+// setting variables for move Movecounter
 
 const movesCount = document.querySelector(".moves-counter");
 let moves = 0;
+
+// setting variables for the Rating
+
+const star = document.getElementById("stars").querySelectorAll(".star");
+let starCount = 3;
 
 // setting variables for flipping and matching
 
