@@ -64,8 +64,8 @@ function flip(){
   for(let i = 0; i < MyDeck.length; i++){
     allCards[i].addEventListener('click', function(evt){
       let targetClass = evt.target.className;
-      if (timeStart === false) {
-        timeStart = true;
+      if (startTime === false) {
+        startTime = true;
       } if(targetClass == "card" && HowManyTimes != 2){
         allCards[i].className = ('class', 'card open show');
       } if(firstCard == false ){
@@ -142,7 +142,7 @@ function movesCounter() {
 // Rating
 
 function Rating() {
-	if (moves === 30) {
+	if (moves === 24) {
 		star[2].firstElementChild.classList.remove("fa-star");
 		starCount--;
 	} if (moves === 40) {
@@ -150,3 +150,42 @@ function Rating() {
 		starCount--;
 	}
 }
+
+function stopTime() {
+	clearInterval(time);
+
+// restart
+
+function reset(){
+  restartGame.onclick = (function(){
+    for(let i = 0; i < MyDeck.length; i++){
+      allCards[i].setAttribute('class', 'card');
+    } HowManyTimes *= 0;
+      firstCard = '';
+      secondCard = '';
+      firstParentCard = '';
+      secondParentCard = '';
+
+      //reset all stars
+
+      stopTime();
+	    startTime = false;
+	    seconds = 0;
+	    minutes = 0;
+      timeCounter.innerHTML = "<i class='fa fas fa-stopwatch'></i>" + " Timer: 00:00";
+
+       // reset Rating
+      star[1].firstElementChild.classList.add("fa-star");
+	    star[2].firstElementChild.classList.add("fa-star");
+	    starCount = 3;
+      
+	    // reset moves
+	    moves = 0;
+	    movesCount.innerHTML = 0;
+
+      // shuffle all cards again
+      flip();
+      shuffle(MyDeck);
+      loop();
+    });
+} reset();
