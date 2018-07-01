@@ -91,11 +91,11 @@ function listener(){
           };
         }, 1000);
       }
+      cardClasses();
     })
   }
 }
 
-cardClasses();
 listener();
 looping();
 
