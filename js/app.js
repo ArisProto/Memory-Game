@@ -160,7 +160,7 @@ function stopTime() {
 
 // restart
 
-function resetting(){
+function reset(){
   resetGame.onclick = (function(){
     for(let i = 0; i < MyDeck.length; i++){
       allCards[i].setAttribute('class', 'card');
@@ -193,4 +193,4 @@ function resetting(){
       loop();
   });
 }
-resetting();
+reset();
