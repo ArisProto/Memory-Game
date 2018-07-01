@@ -113,10 +113,12 @@ loop();
 
 function timer() {
 	time = setInterval(function() {
-		seconds++;
-		if (seconds === 60) {
-      minutes++;
-			seconds = 0;
-		} timeCounter.innerHTML = "<i class='fas fa-stopwatch'></i>" + " Timer: " + minutes + " min " + seconds + " sec" ;
-	}, 1000);
+    setTimeout(() => {
+      seconds++;
+	    if (seconds === 60) {
+        minutes++;
+	      seconds = 0;
+	    } timeCounter.innerHTML = "<i class='fas fa-stopwatch'></i>" + " Timer: " + minutes + " min " + seconds + " sec" ;
+    }, 10);
+  }, 1000);
 }
