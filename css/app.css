@@ -89,22 +89,6 @@ h1 {
     font-size: 33px;
 }
 
-/*.deck .card.flip {
-    transform: rotateY(180deg);
-    transition: 0.2s linear 0s;
-    background: #ffffff;
-    cursor: default;
-}
-
-.deck i {
-  visibility: hidden;
-}
-
-.flip i {
-  background: #ffffff;
-  visibility: visible;
-}*/
-
 .deck .card.match {
     cursor: default;
     background: #2a615c;

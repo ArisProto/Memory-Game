@@ -60,19 +60,6 @@ function listener(){
 listener();
 looping();
 
-
-
-/*deck.addEventListener("click", function(evt) {
-	if (evt.target.nodeName === "LI") {
-		console.log(evt.target.nodeName + " Has been clicked");
-		flipCard();
-	}
-	function flipCard() {
-		evt.target.classList.add("flip");
-	}
-})*/
-
-
 /*
  * set up the event listener for a card. If a card is clicked:
  *  - display the card's symbol (put this functionality in another function that you call from this one)
