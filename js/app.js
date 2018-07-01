@@ -6,11 +6,12 @@ const MyCards = ["fas fa-ambulance", "fas fa-fighter-jet", "fas fa-anchor","fas 
 const MyDeck = MyCards.concat(MyCards);
 const shuffleCards = shuffle(MyDeck);
 
-let openedCardsNum = 0;
-let cardOne = '';
-let cardOneParent = '';
-let cardTwo = '';
-let cardTwoParent = '';
+let HowManyTimes = 0;
+let matchingCards = 0;
+let firstCard = '';
+let firstParentCard = '';
+let secondCard = '';
+let secondParentCard = '';
 
 // const deck = document.querySelector(".deck");
 
@@ -39,65 +40,65 @@ function shuffle(array) {
 
 // --
 
-const cardsI = document.querySelectorAll(".card i");
-    function looping(){
+const fasCards = document.querySelectorAll(".card i");
+    function loop(){
         for(let i = 0; i < MyDeck.length; i++){
-            cardsI[i].setAttribute('class', shuffleCards[i]);
+            fasCards[i].setAttribute('class', shuffleCards[i]);
     }
 }
 
-const deckLi = document.querySelectorAll('.deck li');
+const allCards = document.querySelectorAll('.deck li');
 
 // Selecting a card + flip
 
-function listener(){
+function flip(){
   for(let i = 0; i < MyDeck.length; i++){
     deckLi[i].addEventListener('click', function(evt){
       let targetClass = evt.target.className;
-      if(targetClass == "card" && openedCardsNum != 2){
-        deckLi[i].className = ('class', 'card open show');
-      } if(cardOne == false ){
-        cardOne = evt.target.firstElementChild.className;
-        cardOneParent = evt.target;
-        openedCardsNum += 1;
+      if(targetClass == "card" && HowManyTimes != 2){
+        allCards[i].className = ('class', 'card open show');
+      } if(firstCard == false ){
+        firstCard = evt.target.firstElementChild.className;
+        firstParentCard = evt.target;
+        HowManyTimes += 1;
       } else {
-        cardTwo = evt.target.firstElementChild.className;
-        cardTwoParent = evt.target;
-        openedCardsNum += 1;
-      } function cardClasses(){
-        if(openedCardsNum === 2){
-          if(cardTwo == cardOne){
-            matchedCards += 2;
+        secondCard = evt.target.firstElementChild.className;
+        secondParentCard = evt.target;
+        HowManyTimes += 1;
+      } function doTheyMatch(){
+        if(HowManyTimes === 2){
+          if(secondCard == firstCard){
+            matchingCards += 2;
           }
         } setTimeout(() => {
-          if(openedCardsNum === 2){
-            if(cardTwo == cardOne){
-              cardOneParent.className = 'card open match';
-              cardTwoParent.className = 'card open match';
-              openedCardsNum *= 0;
-              cardOne = '';
-              cardTwo = '';
-              cardOneParent = '';
-              cardTwoParent = '';
+          if(HowManyTimes === 2){
+            if(secondCard == firstCard){
+              firstParentCard.className = 'card open match';
+              secondParentCard.className = 'card open match';
+              HowManyTimes *= 0;
+              firstCard = '';
+              secondCard = '';
+              firstParentCard = '';
+              secondParentCard = '';
             } else {
-              cardOneParent.className = 'card';
-              openedCardsNum *= 0;
-              cardTwoParent.className = 'card';
-              cardOne = '';
-              cardTwo = '';
-              cardOneParent = '';
-              cardTwoParent = '';
+              firstParentCard.className = 'card';
+              secondParentCard.className = 'card';
+              HowManyTimes *= 0;
+              firstCard = '';
+              secondCard = '';
+              firstParentCard = '';
+              secondParentCard = '';
             }
           };
-        }, 1000);
+        }, 1500);
       }
-      cardClasses();
+      doTheyMatch();
     })
   }
 }
 
-listener();
-looping();
+flip();
+loop();
 
 /*
  * set up the event listener for a card. If a card is clicked:
