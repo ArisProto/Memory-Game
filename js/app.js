@@ -58,7 +58,7 @@ function flip(){
       let targetClass = evt.target.className;
       if (timeStart === false) {
         timeStart = true;
-      } setTimeout(timer(),0);
+      } setTimeout(timer(),1000000000);
       if(targetClass == "card" && HowManyTimes != 2){
         allCards[i].className = ('class', 'card open show');
       } if(firstCard == false ){
