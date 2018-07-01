@@ -191,6 +191,6 @@ function reset(){
       flip();
       shuffle(MyDeck);
       loop();
-    });
+  });
 }
 reset();
