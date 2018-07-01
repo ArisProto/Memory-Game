@@ -2,7 +2,7 @@
 * Create a list that holds all of your cards
 */
 
-const MyCards = ["fas fa-ambulance", "fas fa-fighter-jet", "fas fa-anchor","fas fa-child", "fas fa-chess-knight", "fas fa-archway", "fas fa-feather", "far fa-graduation-cap"];
+const MyCards = ["fas fa-ambulance", "fas fa-fighter-jet", "fas fa-bolt","fas fa-child", "fas fa-chess-knight", "fas fa-archway", "fas fa-feather", "far fa-graduation-cap"];
 const MyDeck = MyCards.concat(MyCards);
 const shuffleCards = shuffle(MyDeck);
 
