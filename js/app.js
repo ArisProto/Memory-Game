@@ -146,7 +146,7 @@ function movesCounter() {
 // Rating
 
 function Rating() {
-	if (moves === 24) {
+	if (moves === 30) {
 		star[2].firstElementChild.classList.remove("fa-star");
 		starCount--;
 	} if (moves === 40) {
