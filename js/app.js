@@ -73,8 +73,8 @@ function flip(){
         } setTimeout(() => {
           if(HowManyTimes === 2){
             if(secondCard == firstCard){
-              firstParentCard.className = 'card open match';
-              secondParentCard.className = 'card open match';
+              firstParentCard.className = 'card open';
+              secondParentCard.className = 'card open';
               HowManyTimes *= 0;
               firstCard = '';
               secondCard = '';
