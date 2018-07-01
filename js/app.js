@@ -103,7 +103,7 @@ function flip(){
       }
       doTheyMatch();
     })
-  } timer();
+  }
 }
 
 // Calling the functions
