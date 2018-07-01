@@ -68,11 +68,11 @@ function flip(){
   for(let i = 0; i < MyDeck.length; i++){
     allCards[i].addEventListener('click', function(evt){
       let targetClass = evt.target.className;
-      if (timeStart == false) {
+      if (timeStart === false) {
         timeStart = true;
       } if(targetClass == "card" && HowManyTimes != 2){
         allCards[i].className = ('class', 'card open show');
-      } if(firstCard === false ){
+      } if(firstCard == false ){
         firstCard = evt.target.firstElementChild.className;
         firstParentCard = evt.target;
         HowManyTimes += 1;
@@ -113,7 +113,7 @@ function flip(){
       doTheyMatch();
       movesCounter();
       Rating();
-    });
+    })
   }
 }
 
@@ -158,6 +158,7 @@ function Rating() {
 function stopTime() {
 	clearInterval(time);
 }
+
 // restart
 
 function reset(){
