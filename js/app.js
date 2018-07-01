@@ -7,6 +7,10 @@ const MyDeck = MyCards.concat(MyCards);
 const shuffleCards = shuffle(MyDeck);
 
 let openedCardsNum = 0;
+let cardOne = '';
+let cardOneParent = '';
+let cardTwo = '';
+let cardTwoParent = '';
 
 // const deck = document.querySelector(".deck");
 
