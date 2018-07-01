@@ -1,7 +1,3 @@
-let bothCards = cards.concat(cards);
-const frontSides = document.getElementsByClassName("front");
-const backSides = document.getElementsByClassName("back");
-
 /*
 * Create a list that holds all of your cards
 */
@@ -52,16 +48,6 @@ document.addEventListener("load", function() {
 }, true);
 
 // Selecting a card + flip
-
-for (let i = 0; i < backSides.length; i++) {
-  let x = this.flipCard.bind(this, i);
-  y.push(x);
-  backSides[i].addEventListener("click", x);
-};
-
-function flipCard(i) {
-  backSides[i].style.transform = "rotateY(-180deg)";
-  frontSides[i].style.transform = "rotateY(0deg)";
 
 /*
  * set up the event listener for a card. If a card is clicked:
