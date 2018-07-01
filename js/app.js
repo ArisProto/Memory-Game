@@ -159,17 +159,50 @@ function stopTime() {
 	clearInterval(time);
 }
 
-// Win
+// Win the Game!
 
 function winGame() {
-	if (matched.cards == 16) {
+	if (matchingCards == 16) {
+
+    // create html
+    const divHtml = document.createElement('div');
+    const h1Html = document.createElement('h1');
+    const h2Html = document.createElement('h2');
+    const pHtml = document.createElement('p');
+
+    // give it a class
+    divHtml.setAttribute('class', 'done');
+    const inside = document.createElement('div');
+    inside.setAttribute('class', 'inner');
+    divHtml.appendChild(inside);
+
+    // insert it into the html
+    container.insertAdjacentElement('afterbegin', divHtml);
+    inside.appendChild(h1Html);
+    inside.appendChild(h2Html);
+    inside.appendChild(pHtml);
+
+    // add text
+    htmlDoneH1.innerText = 'Congratulations! You Successfully Finished the Memory!';
+    htmlDoneH2.innerText = 'Here are your stats';
+    htmlDoneP.innerText = 'It took you ' + countMoves + ' moves (' + getFaStar.length + faStarCount() + ')\n ' + min + ' minutes and ' + sec + ' seconds \nto complete the game!';
+
+    // add play again button
+    const playAgain = document.createElement('a');
+    const playAgainText = document.createTextNode("Play again");
+    playAgain.appendChild(linkText);
+    playAain.title = "Play again";
+    playAgain.href = "index.html";
+    inside.appendChild(playAgain);
+
+    // call functions
     matchingCards = 0;
     stopTime();
     reset();
 	}
 }
 
-// restart
+// Reset the Game
 
 function reset(){
   resetGame.onclick = (function(){
