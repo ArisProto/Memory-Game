@@ -200,8 +200,8 @@ function winGame() {
     // add play again button
     const playAgain = document.createElement('a');
     const playAgainText = document.createTextNode("Play again");
-    playAgain.appendChild(linkText);
-    playAain.title = "Play again";
+    playAgain.appendChild(playAgainText);
+    playAgain.title = "Play again";
     playAgain.href = "index.html";
     inside.appendChild(playAgain);
 
@@ -227,7 +227,7 @@ function reset(){
       //reset all stars
 
       stopTime();
-	    startTime = false;
+	    timeStart = false;
 	    seconds = 0;
 	    minutes = 0;
       timeCounter.innerHTML = "<i class='fa fas fa-stopwatch'></i>" + " Timer: 00:00";
