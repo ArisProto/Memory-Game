@@ -58,6 +58,8 @@ function flip(){
       let targetClass = evt.target.className;
       if(targetClass == "card" && HowManyTimes != 2){
         allCards[i].className = ('class', 'card open show');
+      } if (timeStart === false) {
+        timeStart = true;
       } if(firstCard == false ){
         firstCard = evt.target.firstElementChild.className;
         firstParentCard = evt.target;
@@ -67,10 +69,7 @@ function flip(){
         secondParentCard = evt.target;
         HowManyTimes += 1;
 
-        if (timeStart === false) {
-    			timeStart = true;
-        }
-// Comparing the Cards
+      // Comparing the Cards
 
       } function doTheyMatch(){
         if(HowManyTimes === 2){
