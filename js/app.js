@@ -53,8 +53,8 @@ const allCards = document.querySelectorAll('.deck li');
 
 function flip(){
   for(let i = 0; i < MyDeck.length; i++){
-    allCards[i].addEventListener('click', function(event){
-      let targetClass = event.target.className;
+    allCards[i].addEventListener('click', function(evt){
+      let targetClass = evt.target.className;
       if(targetClass == "card" && HowManyTurned != 2){
         allCards[i].className = ('class', 'card open show');
       }
@@ -63,12 +63,12 @@ function flip(){
 }
 
 if(firstCard == false ){
-  firstCard = event.target.firstElementChild.className;
-  firstParentCard = event.target;
+  firstCard = evt.target.firstElementChild.className;
+  firstParentCard = evt.target;
   HowManyTurned += 1;
 } else {
-  secondCard = event.target.firstElementChild.className;
-  secondParentCard = event.target;
+  secondCard = evt.target.firstElementChild.className;
+  secondParentCard = evt.target;
   HowManyTurned += 1;
 }
 
