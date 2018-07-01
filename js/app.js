@@ -47,7 +47,14 @@ function flip(){
       let targetClass = evt.target.className;
       if(targetClass == "card" && HowManyTimes != 2){
         allCards[i].className = ('class', 'card open show');
-      } if(firstCard == false ){
+      }
+
+      // start timer
+      if (timeStart === false) {
+			timeStart = true;
+			timer();
+      
+      if(firstCard == false ){
         firstCard = evt.target.firstElementChild.className;
         firstParentCard = evt.target;
         HowManyTimes += 1;
@@ -102,7 +109,7 @@ const timeCounter = document.querySelector(".timer");
 let time;
 let minutes = 0;
 let seconds = 0;
-let timeStart = false;
+let startTime = false;
 
 function timer() {
 	time = setInterval(function() {
