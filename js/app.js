@@ -1,8 +1,12 @@
-/*
- * Create a list that holds all of your cards
- */
+let bothCards = cards.concat(cards);
+const frontSides = document.getElementsByClassName("front");
+const backSides = document.getElementsByClassName("back");
 
- let cards = [
+/*
+* Create a list that holds all of your cards
+*/
+
+let cards = [
    "fas fa-ambulance",
    "fas fa-fighter-jet",
    "fas fa-anchor",
@@ -21,6 +25,7 @@
  */
 
 // Shuffle function from http://stackoverflow.com/a/2450976
+
 function shuffle(array) {
     var currentIndex = array.length, temporaryValue, randomIndex;
 
@@ -38,11 +43,12 @@ function shuffle(array) {
 // Selecting a card + flip
 
 for (let i = 0; i < backSides.length; i++) {
-  let x = this.flipCard.bind(this, i);
+  let x = this.flipingCard.bind(this, i);
   y.push(x);
+  backSides[i].addEventListener("click", x);
 };
 
-function flipCard(i) {
+function flipingCard(i) {
   backSides[i].style.transform = "rotateY(-180deg)";
   frontSides[i].style.transform = "rotateY(0deg)";
 
