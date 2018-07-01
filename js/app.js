@@ -49,7 +49,7 @@ function listener(){
 
             deckLi[i].className = ('class', 'card open show');
           }
-        }
+        })
       }
     }
 
