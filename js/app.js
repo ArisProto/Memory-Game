@@ -48,6 +48,7 @@ deck.addEventListener("click", function(evt) {
 	function flipCard() {
 		evt.target.classList.add("flip");
 	}
+}
 
 
 /*
