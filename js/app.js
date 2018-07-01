@@ -159,6 +159,16 @@ function stopTime() {
 	clearInterval(time);
 }
 
+// Win
+
+function winGame() {
+	if (matched.cards == 16) {
+    matchingCards = 0;
+    stopTime();
+    reset();
+	}
+}
+
 // restart
 
 function reset(){
