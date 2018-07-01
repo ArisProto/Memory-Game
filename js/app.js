@@ -2,6 +2,16 @@
  * Create a list that holds all of your cards
  */
 
+ let cards = [
+   "fas fa-ambulance",
+   "fas fa-fighter-jet",
+   "fas fa-anchor",
+   "fas fa-child",
+   "fas fa-chess-knight",
+   "fas fa-archway",
+   "fas fa-feather",
+   "far fa-graduation-cap",
+ ];
 
 /*
  * Display the cards on the page
