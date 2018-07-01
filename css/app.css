@@ -97,7 +97,7 @@ h1 {
 
 /* Score Panel, Timer, Moves*/
 
-.timer {
+#timer {
   margin: 0 50px;
   display: inline-block;
 }
