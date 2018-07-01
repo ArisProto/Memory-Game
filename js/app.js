@@ -72,7 +72,7 @@ function flip(){
         startTime = true;
       } if(targetClass == "card" && HowManyTimes != 2){
         allCards[i].className = ('class', 'card open show');
-      } if(firstCard == false ){
+      } if(firstCard === false ){
         firstCard = evt.target.firstElementChild.className;
         firstParentCard = evt.target;
         HowManyTimes += 1;
@@ -113,7 +113,7 @@ function flip(){
       doTheyMatch();
       movesCounter();
       Rating();
-    })
+    });
   }
 }
 
@@ -157,7 +157,7 @@ function Rating() {
 
 function stopTime() {
 	clearInterval(time);
-
+}
 // restart
 
 function reset(){
