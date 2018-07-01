@@ -5,7 +5,7 @@ html {
 *,
 *::before,
 *::after {
-    box-sizing: inherit;
+  box-sizing: inherit;
 }
 
 html,
@@ -85,7 +85,6 @@ h1 {
 /* Score Panel, Timer, Moves*/
 
 .score-panel {
-
   text-align: center;
   display: flex;
   flex-wrap: wrap;
