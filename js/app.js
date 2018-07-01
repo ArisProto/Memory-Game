@@ -53,7 +53,7 @@ const allCards = document.querySelectorAll('.deck li');
 
 function flip(){
   for(let i = 0; i < MyDeck.length; i++){
-    deckLi[i].addEventListener('click', function(evt){
+    allCards[i].addEventListener('click', function(evt){
       let targetClass = evt.target.className;
       if(targetClass == "card" && HowManyTimes != 2){
         allCards[i].className = ('class', 'card open show');
