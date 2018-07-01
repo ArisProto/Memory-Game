@@ -40,7 +40,7 @@ let secondParentCard = '';
 const winWindow = document.createElement('div');
 winWindow.setAttribute('class', 'win');
 
-let winBox = document.querySelector('.winBox');
+let container = document.querySelector('.container');
 
 // setting variables for resetting
 
@@ -187,7 +187,7 @@ function winGame() {
     divHtml.appendChild(inside);
 
     // insert it into the html
-    winBox.insertAdjacentElement('afterbegin', divHtml);
+    container.insertAdjacentElement('afterbegin', divHtml);
     inside.appendChild(h1Html);
     inside.appendChild(h2Html);
     inside.appendChild(pHtml);
