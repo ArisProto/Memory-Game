@@ -51,13 +51,13 @@ document.addEventListener("load", function() {
 
 deck.addEventListener("click", function(event) {
 	if (event.target.nodeName === "LI") {
-		console.log(event.target.nodeName + " Was clicked");
+		console.log(event.target.nodeName + " Has been clicked");
 		flipCard();
 	}
 	function flipCard() {
-		evt.target.classList.add("flip");
-		addToOpened();
+		event.target.classList.add("flip");
 	}
+
 
 /*
  * set up the event listener for a card. If a card is clicked:
