@@ -4,9 +4,14 @@
 
 const MyCards = ["fas fa-ambulance", "fas fa-fighter-jet", "fas fa-anchor","fas fa-child", "fas fa-chess-knight", "fas fa-archway", "fas fa-feather", "fas fa-dove"];
 const MyDeck = MyCards.concat(MyCards);
-const shuffleCards = shuffle(MyDeck);
+const shuffleDeck = shuffle(MyDeck);
 
-let openedCardsNum = 0;
+let HowManyTurned = 0;
+let firstCard = '';
+let firstParentCard = '';
+let secondCard = '';
+let secondParentCard = '';
+
 
 // const deck = document.querySelector(".deck");
 
@@ -33,32 +38,75 @@ function shuffle(array) {
     return array;
 }
 
-// --
+// Setting attribute
 
-const cardsI = document.querySelectorAll(".card i");
-    function looping(){
+const fasCards = document.querySelectorAll(".card i");
+    function loop(){
         for(let i = 0; i < MyDeck.length; i++){
-            cardsI[i].setAttribute('class', shuffleCards[i]);
+            fasCards[i].setAttribute('class', shuffleDeck[i]);
     }
 }
 
-const deckLi = document.querySelectorAll('.deck li');
+const allCards = document.querySelectorAll('.deck li');
 
 // Selecting a card + flip
 
-function listener(){
+function flip(){
   for(let i = 0; i < MyDeck.length; i++){
-    deckLi[i].addEventListener('click', function(evt){
-      let targetClass = evt.target.className;
-      if(targetClass == "card" && openedCardsNum != 2){
-        deckLi[i].className = ('class', 'card open show');
+    allCards[i].addEventListener('click', function(evt){
+      let targetClass = event.target.className;
+      if(targetClass == "card" && HowManyTurned != 2){
+        allCards[i].className = ('class', 'card open show');
       }
     })
   }
 }
 
-listener();
-looping();
+if(firstCard == false ){
+  firstCard = event.target.firstElementChild.className;
+  firstParentCard = event.target;
+  HowManyTurned += 1;
+} else {
+  secondCard = event.target.firstElementChild.className;
+  secondParentCard = event.target;
+  HowManyTurned += 1;
+}
+
+// Compare opened cards
+
+function compareCards(){
+  if(openedCardsNum === 2){
+    if(secondCard == firstCard){
+      matchedCards += 2;
+    }
+  } setTimeout(() => {
+    if(HowManyTurned === 2){
+      if(secondCard == firstCard){
+        firstParentCard.className = 'card open';
+        secondParentCard.className = 'card open';
+        HowManyTurned *= 0;
+        firstCard = '';
+        secondCard = '';
+        firstParentCard = '';
+        secondParentCard = '';
+      } else {
+        firstParentCard.className = 'card';
+        secondParentCard.className = 'card';
+        HowManyTurned *= 0;
+        firstCard = '';
+        secondCard = '';
+        firstParentCard = '';
+        secondParentCard = '';
+      }
+    };
+  }, 1500);
+}
+
+// call functions
+
+compareCards();
+flip();
+loop();
 
 /*
  * set up the event listener for a card. If a card is clicked:
