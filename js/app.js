@@ -38,15 +38,6 @@ function shuffle(array) {
 
 // At the beginning of the game allocate card classes
 
-bothCards = shuffleArray(bothCards);
-
-document.addEventListener("load", function() {
-
-  for (let i = 0; i < frontSides.length; i++) {
-    frontSides[i].className += " " + bothCards[i];
-  };
-}, true);
-
 // Selecting a card + flip
 
 deck.addEventListener("click", function(event) {
