@@ -56,12 +56,10 @@ function flip(){
   for(let i = 0; i < MyDeck.length; i++){
     allCards[i].addEventListener('click', function(evt){
       let targetClass = evt.target.className;
-      if (evt.target.nodeName === "LI") {
-        console.log(evt.target.nodeName + " Was clicked");
-        if (timeStart === false) {
+      if (timeStart === false) {
         timeStart = true;
-        timer();
-      } if(targetClass == "card" && HowManyTimes != 2){
+      } timer();
+      if(targetClass == "card" && HowManyTimes != 2){
         allCards[i].className = ('class', 'card open show');
       } if(firstCard == false ){
         firstCard = evt.target.firstElementChild.className;
