@@ -68,7 +68,7 @@ function flip(){
   for(let i = 0; i < MyDeck.length; i++){
     allCards[i].addEventListener('click', function(evt){
       let targetClass = evt.target.className;
-      if (startTime === false) {
+      if (startTime == false) {
         startTime = true;
       } if(targetClass == "card" && HowManyTimes != 2){
         allCards[i].className = ('class', 'card open show');
@@ -107,7 +107,7 @@ function flip(){
               firstParentCard = '';
               secondParentCard = '';
             }
-          };
+          }
         }, 500);
       }
       doTheyMatch();
