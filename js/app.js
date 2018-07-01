@@ -1,16 +1,13 @@
-/*
-* Create a list that holds all of your cards
-*/
-
 const MyCards = ["fas fa-ambulance", "fas fa-fighter-jet", "fas fa-anchor","fas fa-child", "fas fa-chess-knight", "fas fa-archway", "fas fa-feather", "fas fa-dove"];
 const MyDeck = MyCards.concat(MyCards);
 const shuffleCards = shuffle(MyDeck);
+const timeCounter = document.querySelector(".timer");
 
 let HowManyTimes = 0;
 let matchingCards = 0;
 let firstCard = '';
-let firstParentCard = '';
 let secondCard = '';
+let firstParentCard = '';
 let secondParentCard = '';
 
 // const deck = document.querySelector(".deck");
@@ -104,6 +101,18 @@ function flip(){
 
 flip();
 loop();
+
+// timer | used: Used: https://www.w3schools.com/js/js_timing.asp
+
+function timer() {
+	time = setInterval(function() {
+		seconds++;
+		if (seconds === 60) {
+      minutes++;
+			seconds = 0;
+		} timeCounter.innerHTML = "<i class='fas fa-stopwatch'></i>" + " Timer: " + minutes + " min " + seconds + " sec" ;
+	}, 1000);
+}
 
 /*
  * set up the event listener for a card. If a card is clicked:
