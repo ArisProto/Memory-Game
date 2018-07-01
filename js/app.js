@@ -12,6 +12,11 @@ let minutes = 0;
 let seconds = 0;
 let timeStart = false;
 
+// setting variables for move movecounter
+
+const movesCount = document.querySelector(".moves-counter");
+let moves = 0;
+
 // setting variables for flipping and matching
 
 const allCards = document.querySelectorAll('.deck li');
@@ -120,4 +125,11 @@ function timer() {
 			seconds = 0;
 		} timeCounter.innerHTML = "<i class='fas fa-stopwatch'></i>" + " Timer: " + minutes + " min " + seconds + " sec" ;
 	}, 1000);
+}
+
+// move counter
+
+function movesCounter() {
+	movesCount.innerHTML ++;
+	moves ++;
 }
