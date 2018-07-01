@@ -33,6 +33,10 @@ let secondCard = '';
 let firstParentCard = '';
 let secondParentCard = '';
 
+// setting variables for resetting
+
+const resetGame = document.querySelector(".restart");
+
 // Shuffle function from http://stackoverflow.com/a/2450976
 
 const shuffleCards = shuffle(MyDeck);
@@ -157,7 +161,7 @@ function stopTime() {
 // restart
 
 function reset(){
-  restartGame.onclick = (function(){
+  resetGame.onclick = (function(){
     for(let i = 0; i < MyDeck.length; i++){
       allCards[i].setAttribute('class', 'card');
     } HowManyTimes *= 0;
@@ -178,7 +182,7 @@ function reset(){
       star[1].firstElementChild.classList.add("fa-star");
 	    star[2].firstElementChild.classList.add("fa-star");
 	    starCount = 3;
-      
+
 	    // reset moves
 	    moves = 0;
 	    movesCount.innerHTML = 0;
@@ -188,4 +192,5 @@ function reset(){
       shuffle(MyDeck);
       loop();
     });
-} reset();
+}
+reset();
