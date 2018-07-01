@@ -107,6 +107,14 @@ loop();
 
 // Timer
 
+const game = {
+  stars: 0,
+  moves: 0,
+  timer: 0,
+}
+game.ui = {};
+game.ui.stars = document.getElementById("rating");
+game.ui.moves = document.getElementById("moves");
 game.ui.timer = document.getElementById("timer");
 
 function Time() {
