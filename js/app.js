@@ -35,6 +35,16 @@ function shuffle(array) {
     return array;
 }
 
+// Selecting a card + flip
+
+for (let i = 0; i < backSides.length; i++) {
+  let x = this.flipCard.bind(this, i);
+  y.push(x);
+};
+
+function flipCard(i) {
+  backSides[i].style.transform = "rotateY(-180deg)";
+  frontSides[i].style.transform = "rotateY(0deg)";
 
 /*
  * set up the event listener for a card. If a card is clicked:
