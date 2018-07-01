@@ -72,11 +72,11 @@ h1 {
     cursor: default;
 }
 
-.deck fas {
+.deck i {
   visibility: hidden;
 }
 
-.flip fas {
+.flip i {
   background: #ffffff;
   visibility: visible;
 }
