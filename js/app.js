@@ -59,7 +59,6 @@ function flip(){
       if (timeStart === false) {
         timeStart = true;
       } setTimeout(timer(),0);
-      setTimeout(function(){ alert("Hello"); }, 3000);
       if(targetClass == "card" && HowManyTimes != 2){
         allCards[i].className = ('class', 'card open show');
       } if(firstCard == false ){
