@@ -107,6 +107,8 @@ loop();
 
 // Timer
 
+game.ui.timer = document.getElementById("timer");
+
 function Time() {
   document.getElementById("game").removeEventListener("click", Time);
   startTime = new Date().getTime();
