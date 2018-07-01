@@ -4,13 +4,13 @@
 
 const MyCards = ["fas fa-ambulance", "fas fa-fighter-jet", "fas fa-anchor","fas fa-child", "fas fa-chess-knight", "fas fa-archway", "fas fa-feather", "fas fa-dove"];
 const MyDeck = MyCards.concat(MyCards);
-const shuffleDeck = shuffle(MyDeck);
+const shuffleCards = shuffle(MyDeck);
 
-let HowManyTurned = 0;
-let firstCard = '';
-let firstParentCard = '';
-let secondCard = '';
-let secondParentCard = '';
+let openedCardsNum = 0;
+let cardOne = '';
+let cardOneParent = '';
+let cardTwo = '';
+let cardTwoParent = '';
 
 
 // const deck = document.querySelector(".deck");
@@ -38,75 +38,80 @@ function shuffle(array) {
     return array;
 }
 
-// Setting attribute
+// --
 
-const fasCards = document.querySelectorAll(".card i");
-    function loop(){
+const cardsI = document.querySelectorAll(".card i");
+    function looping(){
         for(let i = 0; i < MyDeck.length; i++){
-            fasCards[i].setAttribute('class', shuffleDeck[i]);
+            cardsI[i].setAttribute('class', shuffleCards[i]);
     }
 }
 
-const allCards = document.querySelectorAll('.deck li');
+const deckLi = document.querySelectorAll('.deck li');
+
+let cardOne = '';
+let cardOneParent = '';
+let cardTwo = '';
+let cardTwoParent = '';
 
 // Selecting a card + flip
 
-function flip(){
+function listener(){
   for(let i = 0; i < MyDeck.length; i++){
-    allCards[i].addEventListener('click', function(evt){
+    deckLi[i].addEventListener('click', function(evt){
       let targetClass = evt.target.className;
-      if(targetClass == "card" && HowManyTurned != 2){
-        allCards[i].className = ('class', 'card open show');
+      if(targetClass == "card" && openedCardsNum != 2){
+        deckLi[i].className = ('class', 'card open show');
       }
     })
   }
 }
 
-if(firstCard == false ){
-  firstCard = evt.target.firstElementChild.className;
-  firstParentCard = evt.target;
-  HowManyTurned += 1;
+if(cardOne == false ){
+  cardOne = evt.target.firstElementChild.className;
+  cardOneParent = evt.target;
+  openedCardsNum += 1;
 } else {
-  secondCard = evt.target.firstElementChild.className;
-  secondParentCard = evt.target;
-  HowManyTurned += 1;
+  cardTwo = evt.target.firstElementChild.className;
+  cardTwoParent = evt.target;
+  openedCardsNum += 1;
 }
 
 // Compare opened cards
 
-function compareCards(){
+function cardClasses(){
   if(openedCardsNum === 2){
-    if(secondCard == firstCard){
-      HowManyTurned += 2;
+    if(cardTwo == cardOne){
+      matchedCards += 2;
     }
   } setTimeout(() => {
-    if(HowManyTurned === 2){
-      if(secondCard == firstCard){
-        firstParentCard.className = 'card open match';
-        secondParentCard.className = 'card open match';
-        HowManyTurned *= 0;
-        firstCard = '';
-        secondCard = '';
-        firstParentCard = '';
-        secondParentCard = '';
+    if(openedCardsNum === 2){
+      if(cardTwo == cardOne){
+        cardOneParent.className = 'card open match';
+        cardTwoParent.className = 'card open match';
+        openedCardsNum *= 0;
+        cardOne = '';
+        cardTwo = '';
+        cardOneParent = '';
+        cardTwoParent = '';
       } else {
-        firstParentCard.className = 'card';
-        secondParentCard.className = 'card';
-        HowManyTurned *= 0;
-        firstCard = '';
-        secondCard = '';
-        firstParentCard = '';
-        secondParentCard = '';
+        cardOneParent.className = 'card';
+        openedCardsNum *= 0;
+        cardTwoParent.className = 'card';
+        cardOne = '';
+        cardTwo = '';
+        cardOneParent = '';
+        cardTwoParent = '';
       }
     };
-  }, 1500);
+  }, 1000);
 }
 
 // call functions
 
-compareCards();
-flip();
-loop();
+cardClasses();
+listener();
+looping();
 
 /*
  * set up the event listener for a card. If a card is clicked:
