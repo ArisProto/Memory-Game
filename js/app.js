@@ -33,26 +33,24 @@ let secondParentCard = '';
 const shuffleCards = shuffle(MyDeck);
 
 function shuffle(array) {
-    var currentIndex = array.length, temporaryValue, randomIndex;
-
-    while (currentIndex !== 0) {
-        randomIndex = Math.floor(Math.random() * currentIndex);
-        currentIndex -= 1;
-        temporaryValue = array[currentIndex];
-        array[currentIndex] = array[randomIndex];
-        array[randomIndex] = temporaryValue;
-    }
-
-    return array;
+  var currentIndex = array.length, temporaryValue, randomIndex;
+  while (currentIndex !== 0) {
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex -= 1;
+    temporaryValue = array[currentIndex];
+    array[currentIndex] = array[randomIndex];
+    array[randomIndex] = temporaryValue;
+  }
+  return array;
 }
 
 // ------------------------
 
 const fasCards = document.querySelectorAll(".card i");
-    function loop(){
-        for(let i = 0; i < MyDeck.length; i++){
-            fasCards[i].setAttribute('class', shuffleCards[i]);
-    }
+  function loop(){
+    for(let i = 0; i < MyDeck.length; i++){
+      fasCards[i].setAttribute('class', shuffleCards[i]);
+  }
 }
 
 // Selecting a card + flip
