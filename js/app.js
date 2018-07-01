@@ -54,12 +54,12 @@ document.addEventListener("load", function() {
 // Selecting a card + flip
 
 for (let i = 0; i < backSides.length; i++) {
-  let x = this.flipingCard.bind(this, i);
+  let x = this.flipCard.bind(this, i);
   y.push(x);
   backSides[i].addEventListener("click", x);
 };
 
-function flipingCard(i) {
+function flipCard(i) {
   backSides[i].style.transform = "rotateY(-180deg)";
   frontSides[i].style.transform = "rotateY(0deg)";
 
