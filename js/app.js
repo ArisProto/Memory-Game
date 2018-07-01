@@ -103,6 +103,7 @@ function flip(){
       }
       doTheyMatch();
       movesCounter();
+      Rating();
     })
   }
 }
@@ -131,4 +132,16 @@ function timer() {
 function movesCounter() {
 	movesCount.innerHTML ++;
 	moves ++;
+}
+
+// Rating
+
+function Rating() {
+	if (moves === 30) {
+		star[2].firstElementChild.classList.remove("fa-star");
+		starCount--;
+	} if (moves === 40) {
+		star[1].firstElementChild.classList.remove("fa-star");
+		starCount--;
+	}
 }
