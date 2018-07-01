@@ -3,6 +3,26 @@
 const MyCards = ["fas fa-ambulance", "fas fa-fighter-jet", "fas fa-anchor","fas fa-child", "fas fa-chess-knight", "fas fa-archway", "fas fa-feather", "fas fa-dove"];
 const MyDeck = MyCards.concat(MyCards);
 
+// setting variables for Timer
+
+const timeCounter = document.querySelector(".timer");
+
+let time;
+let minutes = 0;
+let seconds = 0;
+let startTime = false;
+
+// setting variables for flipping and matching
+
+const allCards = document.querySelectorAll('.deck li');
+
+let HowManyTimes = 0;
+let matchingCards = 0;
+let firstCard = '';
+let secondCard = '';
+let firstParentCard = '';
+let secondParentCard = '';
+
 // Shuffle function from http://stackoverflow.com/a/2450976
 
 const shuffleCards = shuffle(MyDeck);
@@ -30,16 +50,7 @@ const fasCards = document.querySelectorAll(".card i");
     }
 }
 
-const allCards = document.querySelectorAll('.deck li');
-
 // Selecting a card + flip
-
-let HowManyTimes = 0;
-let matchingCards = 0;
-let firstCard = '';
-let secondCard = '';
-let firstParentCard = '';
-let secondParentCard = '';
 
 function flip(){
   for(let i = 0; i < MyDeck.length; i++){
@@ -101,13 +112,6 @@ timer();
 
 
 // timer | used: Used: https://www.w3schools.com/js/js_timing.asp
-
-const timeCounter = document.querySelector(".timer");
-
-let time;
-let minutes = 0;
-let seconds = 0;
-let startTime = false;
 
 function timer() {
 	time = setInterval(function() {
