@@ -77,13 +77,13 @@ if(firstCard == false ){
 function compareCards(){
   if(openedCardsNum === 2){
     if(secondCard == firstCard){
-      matchedCards += 2;
+      HowManyTurned += 2;
     }
   } setTimeout(() => {
     if(HowManyTurned === 2){
       if(secondCard == firstCard){
-        firstParentCard.className = 'card open';
-        secondParentCard.className = 'card open';
+        firstParentCard.className = 'card open match';
+        secondParentCard.className = 'card open match';
         HowManyTurned *= 0;
         firstCard = '';
         secondCard = '';
