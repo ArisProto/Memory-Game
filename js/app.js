@@ -42,7 +42,7 @@ const cardsI = document.querySelectorAll(".card i");
 // Selecting a card + flip
 
 function listener(){
-  for(let i = 0; i < gameCards.length; i++){
+  for(let i = 0; i < MyDeck.length; i++){
     deckLi[i].addEventListener('click', function(evt){
       let targetClass = evt.target.className;
       if(targetClass == "card" && openedCardsNum != 2){
