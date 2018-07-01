@@ -113,6 +113,7 @@ function flip(){
       doTheyMatch();
       movesCounter();
       Rating();
+      winGame();
     })
   }
 }
