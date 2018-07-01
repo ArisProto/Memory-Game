@@ -98,7 +98,10 @@ h1 {
 /* Score Panel, Timer, Moves*/
 
 .score-panel {
+
   text-align: center;
+  display: flex;
+  justify-content: center;
   width: 100%;
   margin-bottom: 10px;
 }
@@ -106,25 +109,30 @@ h1 {
 .score-panel #stars {
   margin: 0;
   padding: 0;
-  display: inline-block;
+  display: inline-flex;
     margin: 0 5px 0 0;
 }
 
 .score-panel #stars li {
   list-style: none;
-  display: inline-block;
+  display: flex;
+  justify-content: center;
   width: 100%;
 }
 
 .score-panel .timer {
   float: left;
-  width: 60%;
+  display: flex;
+  justify-content: center;
+  width: 100%;
   cursor: pointer;
 }
 
 .score-panel .restart {
   float: right;
-  width: 40%;
+  display: flex;
+  justify-content: center;
+  width: 100%;
   cursor: pointer;
 }
 
@@ -133,6 +141,8 @@ h1 {
 .finished {
   position: absolute;
   height: 100%;
+  display: flex;
+  justify-content: center;
   width: 100%;
   background-color: rgba(88, 6, 94, 0.81)
 }
