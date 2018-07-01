@@ -56,6 +56,9 @@ function flip(){
         secondParentCard = evt.target;
         HowManyTimes += 1;
 
+        if (timeStart === false) {
+    			timeStart = true;
+        }
 // Comparing the Cards
 
       } function doTheyMatch(){
@@ -86,10 +89,7 @@ function flip(){
         }, 500);
       }
       doTheyMatch();
-    }) if (timeStart === false) {
-			timeStart = true;
-			timer();
-    }
+    })
   }
 }
 
@@ -97,6 +97,8 @@ function flip(){
 
 flip();
 loop();
+timer();
+
 
 // timer | used: Used: https://www.w3schools.com/js/js_timing.asp
 
