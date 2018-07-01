@@ -40,6 +40,10 @@ function shuffle(array) {
     return array;
 }
 
+// At the beginning of the game allocate card classes
+
+bothCards = shuffleArray(bothCards);
+
 // Selecting a card + flip
 
 for (let i = 0; i < backSides.length; i++) {
