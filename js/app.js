@@ -56,47 +56,44 @@ function listener(){
       let targetClass = evt.target.className;
       if(targetClass == "card" && openedCardsNum != 2){
         deckLi[i].className = ('class', 'card open show');
+      } if(cardOne == false ){
+        cardOne = evt.target.firstElementChild.className;
+        cardOneParent = evt.target;
+        openedCardsNum += 1;
+      } else {
+        cardTwo = evt.target.firstElementChild.className;
+        cardTwoParent = evt.target;
+        openedCardsNum += 1;
+      } function cardClasses(){
+        if(openedCardsNum === 2){
+          if(cardTwo == cardOne){
+            matchedCards += 2;
+          }
+        } setTimeout(() => {
+          if(openedCardsNum === 2){
+            if(cardTwo == cardOne){
+              cardOneParent.className = 'card open match';
+              cardTwoParent.className = 'card open match';
+              openedCardsNum *= 0;
+              cardOne = '';
+              cardTwo = '';
+              cardOneParent = '';
+              cardTwoParent = '';
+            } else {
+              cardOneParent.className = 'card';
+              openedCardsNum *= 0;
+              cardTwoParent.className = 'card';
+              cardOne = '';
+              cardTwo = '';
+              cardOneParent = '';
+              cardTwoParent = '';
+            }
+          };
+        }, 1000);
       }
     })
   }
 }
-
-if(cardOne == false ){
-  cardOne = evt.target.firstElementChild.className;
-  cardOneParent = evt.target;
-  openedCardsNum += 1;
-} else {
-  cardTwo = evt.target.firstElementChild.className;
-  cardTwoParent = evt.target;
-  openedCardsNum += 1;
-}
-
-function cardClasses(){
-  if(openedCardsNum === 2){
-    if(cardTwo == cardOne){
-      matchedCards += 2;
-    }
-  } setTimeout(() => {
-    if(openedCardsNum === 2){
-      if(cardTwo == cardOne){
-        cardOneParent.className = 'card open match';
-        cardTwoParent.className = 'card open match';
-        openedCardsNum *= 0;
-        cardOne = '';
-        cardTwo = '';
-        cardOneParent = '';
-        cardTwoParent = '';
-      } else {
-        cardOneParent.className = 'card';
-        openedCardsNum *= 0;
-        cardTwoParent.className = 'card';
-        cardOne = '';
-        cardTwo = '';
-        cardOneParent = '';
-        cardTwoParent = '';
-      }
-    };
-  }, 1000);}
 
 cardClasses();
 listener();
