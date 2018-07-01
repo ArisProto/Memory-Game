@@ -1,25 +1,11 @@
+// setting variables for deckcards
+
 const MyCards = ["fas fa-ambulance", "fas fa-fighter-jet", "fas fa-anchor","fas fa-child", "fas fa-chess-knight", "fas fa-archway", "fas fa-feather", "fas fa-dove"];
 const MyDeck = MyCards.concat(MyCards);
-const shuffleCards = shuffle(MyDeck);
-const timeCounter = document.querySelector(".timer");
-
-let HowManyTimes = 0;
-let matchingCards = 0;
-let firstCard = '';
-let secondCard = '';
-let firstParentCard = '';
-let secondParentCard = '';
-
-// const deck = document.querySelector(".deck");
-
-/*
- * Display the cards on the page
- *   - shuffle the list of cards using the provided "shuffle" method below
- *   - loop through each card and create its HTML
- *   - add each card's HTML to the page
- */
 
 // Shuffle function from http://stackoverflow.com/a/2450976
+
+const shuffleCards = shuffle(MyDeck);
 
 function shuffle(array) {
     var currentIndex = array.length, temporaryValue, randomIndex;
@@ -35,7 +21,7 @@ function shuffle(array) {
     return array;
 }
 
-// --
+// ------------------------
 
 const fasCards = document.querySelectorAll(".card i");
     function loop(){
@@ -47,6 +33,13 @@ const fasCards = document.querySelectorAll(".card i");
 const allCards = document.querySelectorAll('.deck li');
 
 // Selecting a card + flip
+
+let HowManyTimes = 0;
+let matchingCards = 0;
+let firstCard = '';
+let secondCard = '';
+let firstParentCard = '';
+let secondParentCard = '';
 
 function flip(){
   for(let i = 0; i < MyDeck.length; i++){
@@ -104,6 +97,13 @@ loop();
 
 // timer | used: Used: https://www.w3schools.com/js/js_timing.asp
 
+const timeCounter = document.querySelector(".timer");
+
+let time;
+let minutes = 0;
+let seconds = 0;
+let timeStart = false;
+
 function timer() {
 	time = setInterval(function() {
 		seconds++;
@@ -113,14 +113,3 @@ function timer() {
 		} timeCounter.innerHTML = "<i class='fas fa-stopwatch'></i>" + " Timer: " + minutes + " min " + seconds + " sec" ;
 	}, 1000);
 }
-
-/*
- * set up the event listener for a card. If a card is clicked:
- *  - display the card's symbol (put this functionality in another function that you call from this one)
- *  - add the card to a *list* of "open" cards (put this functionality in another function that you call from this one)
- *  - if the list already has another card, check to see if the two cards match
- *    + if the cards do match, lock the cards in the open position (put this functionality in another function that you call from this one)
- *    + if the cards do not match, remove the cards from the list and hide the card's symbol (put this functionality in another function that you call from this one)
- *    + increment the move counter and display it on the page (put this functionality in another function that you call from this one)
- *    + if all cards have matched, display a message with the final score (put this functionality in another function that you call from this one)
- */
