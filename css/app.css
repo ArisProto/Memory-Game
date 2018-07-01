@@ -95,9 +95,12 @@ h1 {
     font-size: 33px;
 }
 
-/*
- * Styles for the Score Panel
- */
+/* Score Panel, Timer, Moves*/
+
+.timer {
+  margin: 0 50px;
+  display: inline-block;
+}
 
 .score-panel {
     text-align: left;
