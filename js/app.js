@@ -2,7 +2,7 @@
 * Create a list that holds all of your cards
 */
 
-const cards = [
+const MyCards = [
    "fas fa-ambulance",
    "fas fa-fighter-jet",
    "fas fa-anchor",
@@ -39,6 +39,24 @@ function shuffle(array) {
 }
 
 // At the beginning of the game allocate card classes
+
+function startGame() {
+	// Invoke shuffle function and store in variable
+	const shuffledDeck = shuffle(MyCards);
+	// Iterate over deck of cards array
+	for (let i = 0; i < shuffledDeck.length; i++) {
+		// Create the <li> tags
+		const liTag = document.createElement('LI');
+		// Give <li> class of card
+		liTag.classList.add('card');
+		// Create the <img> tags
+		const addI = document.createElement("I");
+		// Append <img> to <li>
+		liTag.appendChild(addI);
+		// Update the new <li> to the deck <ul>
+		deck.appendChild(liTag);
+	}
+}
 
 // Selecting a card + flip
 
