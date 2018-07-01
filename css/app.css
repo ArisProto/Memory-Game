@@ -129,7 +129,7 @@ h1 {
   background-color: rgba(249, 0, 19, 0.73)
 }
 
-.finished-inside {
+.finished-inner {
   position: relative;
   top: 40%;
   text-align: center;
@@ -137,7 +137,7 @@ h1 {
   font-size: 20px;
 }
 
-.finished-inside a {
+.finished-inner a {
   padding: 1em;
   color: black;
 }

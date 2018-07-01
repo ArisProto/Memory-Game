@@ -181,9 +181,9 @@ function winGame() {
     const pHtml = document.createElement('p');
 
     // give it a class
-    divHtml.setAttribute('class', 'done');
+    divHtml.setAttribute('class', 'finished');
     const inside = document.createElement('div');
-    inside.setAttribute('class', 'inner');
+    inside.setAttribute('class', 'finished-inner');
     divHtml.appendChild(inside);
 
     // insert it into the html
@@ -193,9 +193,9 @@ function winGame() {
     inside.appendChild(pHtml);
 
     // add text
-    htmlDoneH1.innerText = 'Congratulations! You Successfully Finished the Memory!';
-    htmlDoneH2.innerText = 'Here are your stats';
-    htmlDoneP.innerText = 'It took you ' + countMoves + ' moves (' + getFaStar.length + faStarCount() + ')\n ' + min + ' minutes and ' + sec + ' seconds \nto complete the game!';
+    h1Html.innerText = 'Congratulations! You Successfully Finished the Memory!';
+    h2Html.innerText = 'Here are your stats';
+    pHtml.innerText = 'It took you ' + countMoves + ' moves (' + getFaStar.length + faStarCount() + ')\n ' + min + ' minutes and ' + sec + ' seconds \nto complete the game!';
 
     // add play again button
     const playAgain = document.createElement('a');
