@@ -100,8 +100,7 @@ function flip(){
       }
       doTheyMatch();
     })
-    timer();
-  }
+  } timer();
 }
 
 // Calling the functions
