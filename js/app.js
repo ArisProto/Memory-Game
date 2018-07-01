@@ -15,11 +15,13 @@ let timeStart = false;
 // setting variables for move Movecounter
 
 const movesCount = document.querySelector(".moves-counter");
+
 let moves = 0;
 
 // setting variables for the Rating
 
 const star = document.getElementById("stars").querySelectorAll(".star");
+
 let starCount = 3;
 
 // setting variables for flipping and matching
@@ -32,6 +34,12 @@ let firstCard = '';
 let secondCard = '';
 let firstParentCard = '';
 let secondParentCard = '';
+
+//setting variables for winning
+
+const winWindow = document.createElement('div');
+
+let winBox = document.querySelector('.winBox');
 
 // setting variables for resetting
 
@@ -178,7 +186,7 @@ function winGame() {
     divHtml.appendChild(inside);
 
     // insert it into the html
-    container.insertAdjacentElement('afterbegin', divHtml);
+    winBox.insertAdjacentElement('afterbegin', divHtml);
     inside.appendChild(h1Html);
     inside.appendChild(h2Html);
     inside.appendChild(pHtml);
