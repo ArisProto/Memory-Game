@@ -49,6 +49,16 @@ document.addEventListener("load", function() {
 
 // Selecting a card + flip
 
+deck.addEventListener("click", function(event) {
+	if (event.target.nodeName === "LI") {
+		console.log(event.target.nodeName + " Was clicked");
+		flipCard();
+	}
+	function flipCard() {
+		evt.target.classList.add("flip");
+		addToOpened();
+	}
+
 /*
  * set up the event listener for a card. If a card is clicked:
  *  - display the card's symbol (put this functionality in another function that you call from this one)
