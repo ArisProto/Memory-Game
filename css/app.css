@@ -17,7 +17,7 @@ body {
 }
 
 body {
-    background: #ffffff url('../img/geometry2.png'); /* Background pattern from Subtle Patterns */
+    background: rgba(#1b0947, 0.86) url('../img/geometry2.png'); /* Background pattern from Subtle Patterns */
     font-family: 'Coda', cursive;
 }
 
@@ -40,7 +40,7 @@ h1 {
 .deck {
     width: 660px;
     min-height: 680px;
-    background: linear-gradient(160deg, #02ccba 0%, #aa7ecd 100%);
+    background: linear-gradient(160deg, #0b47bf 0%, #874cb5 100%);
     padding: 32px;
     border-radius: 10px;
     box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.5);
@@ -68,7 +68,7 @@ h1 {
 .deck .card {
     height: 125px;
     width: 125px;
-    background: #14471a;
+    background: #02320c;
     font-size: 0;
     color: #ffffff;
     border-radius: 8px;
@@ -81,7 +81,7 @@ h1 {
 
 .deck .card.open {
     transform: rotateY(0);
-    background: #1d6a26;
+    background: #156a26;
     cursor: default;
 }
 
@@ -91,7 +91,7 @@ h1 {
 
 .deck .card.match {
     cursor: default;
-    background: #154044;
+    background: #123673;
     font-size: 33px;
 }
 
