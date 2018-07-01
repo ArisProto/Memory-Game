@@ -105,30 +105,6 @@ function flip(){
 flip();
 loop();
 
-// Timer
-
-const game = {
-  stars: 0,
-  moves: 0,
-  timer: 0,
-}
-game.ui = {};
-game.ui.stars = document.getElementById("rating");
-game.ui.moves = document.getElementById("moves");
-game.ui.timer = document.getElementById("timer");
-
-function Time() {
-  document.getElementById("game").removeEventListener("click", Time);
-  startTime = new Date().getTime();
-  interval = setInterval(function() {
-    currentTime = new Date().getTime();
-    const duration = currentTime - startTime;
-    minutes = Math.floor((duration % (1000 * 60 * 60)) / (1000 * 60));
-    seconds = Math.floor((duration % (1000 * 60)) / 1000);
-    game.ui.timer.innerHTML = minutes + "min " + seconds + "s ";
-  }, 1000);
-}
-
 /*
  * set up the event listener for a card. If a card is clicked:
  *  - display the card's symbol (put this functionality in another function that you call from this one)

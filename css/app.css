@@ -97,11 +97,6 @@ h1 {
 
 /* Score Panel, Timer, Moves*/
 
-#timer {
-  margin: 0 50px;
-  display: inline-block;
-}
-
 .score-panel {
     text-align: left;
     width: 345px;
