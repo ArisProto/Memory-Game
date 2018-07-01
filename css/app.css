@@ -101,6 +101,7 @@ h1 {
 
   text-align: center;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   width: 100%;
   margin-bottom: 10px;
@@ -108,9 +109,10 @@ h1 {
 
 .score-panel #stars {
   margin: 0;
-  padding: 0;
-  display: inline-flex;
-    margin: 0 5px 0 0;
+  padding: 10px;
+  display: flex;
+  width: 100%;
+  margin: 0 5px 0 0;
 }
 
 .score-panel #stars li {
@@ -121,18 +123,23 @@ h1 {
 }
 
 .score-panel .timer {
-  float: left;
+  display: flex;
+  justify-content: flex-start;
+  width: 30%;
+  cursor: pointer;
+}
+
+.score-panel .moves {
   display: flex;
   justify-content: center;
-  width: 100%;
+  width: 40%;
   cursor: pointer;
 }
 
 .score-panel .restart {
-  float: right;
   display: flex;
-  justify-content: center;
-  width: 100%;
+  justify-content: flex-end;
+  width: 30%;
   cursor: pointer;
 }
 
