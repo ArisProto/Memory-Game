@@ -49,10 +49,6 @@ const cardsI = document.querySelectorAll(".card i");
 
 const deckLi = document.querySelectorAll('.deck li');
 
-let cardOne = '';
-let cardOneParent = '';
-let cardTwo = '';
-let cardTwoParent = '';
 
 // Selecting a card + flip
 
