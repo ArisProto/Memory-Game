@@ -2,18 +2,10 @@
 * Create a list that holds all of your cards
 */
 
-const MyCards = [
-   "fas fa-ambulance",
-   "fas fa-fighter-jet",
-   "fas fa-anchor",
-   "fas fa-child",
-   "fas fa-chess-knight",
-   "fas fa-archway",
-   "fas fa-feather",
-   "far fa-graduation-cap",
- ];
-
- const deck = document.querySelector(".deck");
+const MyCards = ["fas fa-ambulance", "fas fa-fighter-jet", "fas fa-anchor","fas fa-child", "fas fa-chess-knight", "fas fa-archway", "fas fa-feather", "far fa-graduation-cap"];
+const MyDeck = MyCards.concat(MyDeck);
+const shuffleCards = shuffle(MyDeck);
+// const deck = document.querySelector(".deck");
 
 /*
  * Display the cards on the page
@@ -40,27 +32,30 @@ function shuffle(array) {
 
 // At the beginning of the game allocate card classes
 
-function startGame() {
-	// Invoke shuffle function and store in variable
-	const shuffledDeck = shuffle(MyCards);
-	// Iterate over deck of cards array
-	for (let i = 0; i < shuffledDeck.length; i++) {
-		// Create the <li> tags
-		const liTag = document.createElement('LI');
-		// Give <li> class of card
-		liTag.classList.add('card');
-		// Create the <img> tags
-		const addI = document.createElement("I");
-		// Append <img> to <li>
-		liTag.appendChild(addI);
-		// Update the new <li> to the deck <ul>
-		deck.appendChild(liTag);
-	}
+const cardsI = document.querySelectorAll(".card i");
+    function looping(){
+        for(let i = 0; i < gameCards.length; i++){
+            cardsI[i].setAttribute('class', shuffleCards[i]);
+    }
 }
 
 // Selecting a card + flip
 
-deck.addEventListener("click", function(evt) {
+function listener(){
+    for(let i = 0; i < gameCards.length; i++){
+      deckLi[i].addEventListener('click', function(evt){
+            let targetClass = evt.target.className;
+            if(targetClass == "card" && openedCardsNum != 2){
+
+            deckLi[i].className = ('class', 'card open show');
+          }
+        }
+      }
+    }
+
+
+
+/*deck.addEventListener("click", function(evt) {
 	if (evt.target.nodeName === "LI") {
 		console.log(evt.target.nodeName + " Has been clicked");
 		flipCard();
@@ -68,7 +63,7 @@ deck.addEventListener("click", function(evt) {
 	function flipCard() {
 		evt.target.classList.add("flip");
 	}
-})
+})*/
 
 
 /*
