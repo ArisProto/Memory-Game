@@ -65,6 +65,9 @@ function flip(){
         secondCard = evt.target.firstElementChild.className;
         secondParentCard = evt.target;
         HowManyTimes += 1;
+
+// Comparing the Cards
+
       } function doTheyMatch(){
         if(HowManyTimes === 2){
           if(secondCard == firstCard){
@@ -97,8 +100,24 @@ function flip(){
   }
 }
 
+// Calling the functions
+
 flip();
 loop();
+
+// Timer
+
+function Time() {
+  document.getElementById("game").removeEventListener("click", Time);
+  startTime = new Date().getTime();
+  interval = setInterval(function() {
+    currentTime = new Date().getTime();
+    const duration = currentTime - startTime;
+    minutes = Math.floor((duration % (1000 * 60 * 60)) / (1000 * 60));
+    seconds = Math.floor((duration % (1000 * 60)) / 1000);
+    game.ui.timer.innerHTML = minutes + "min " + seconds + "s ";
+  }, 1000);
+}
 
 /*
  * set up the event listener for a card. If a card is clicked:
