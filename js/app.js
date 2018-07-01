@@ -39,6 +39,8 @@ const cardsI = document.querySelectorAll(".card i");
     }
 }
 
+const deckLi = document.querySelectorAll('.deck li');
+
 // Selecting a card + flip
 
 function listener(){
