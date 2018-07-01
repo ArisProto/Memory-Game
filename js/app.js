@@ -30,7 +30,7 @@ function shuffle(array) {
     return array;
 }
 
-// At the beginning of the game allocate card classes
+// --
 
 const cardsI = document.querySelectorAll(".card i");
     function looping(){
@@ -42,16 +42,17 @@ const cardsI = document.querySelectorAll(".card i");
 // Selecting a card + flip
 
 function listener(){
-    for(let i = 0; i < gameCards.length; i++){
-      deckLi[i].addEventListener('click', function(evt){
-            let targetClass = evt.target.className;
-            if(targetClass == "card" && openedCardsNum != 2){
-
-            deckLi[i].className = ('class', 'card open show');
-          }
-        })
+  for(let i = 0; i < gameCards.length; i++){
+    deckLi[i].addEventListener('click', function(evt){
+      let targetClass = evt.target.className;
+      if(targetClass == "card" && openedCardsNum != 2){
+        deckLi[i].className = ('class', 'card open show');
       }
-    }
+    })
+  }
+}
+
+looping();
 
 
 
