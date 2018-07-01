@@ -97,8 +97,10 @@ function flip(){
             }
           };
         }, 500);
-      } doTheyMatch();
-    } timer();)
+      }
+      doTheyMatch();
+      timer();
+    })
   }
 }
 
