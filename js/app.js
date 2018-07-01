@@ -90,7 +90,7 @@ function flip(){
               secondParentCard = '';
             }
           };
-        }, 1500);
+        }, 500);
       }
       doTheyMatch();
     })
