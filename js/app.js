@@ -58,7 +58,7 @@ function flip(){
       let targetClass = evt.target.className;
       if (evt.target.nodeName === "LI") {
         console.log(evt.target.nodeName + " Was clicked");
-      if (timeStart === false) {
+        if (timeStart === false) {
         timeStart = true;
         timer();
       } if(targetClass == "card" && HowManyTimes != 2){
