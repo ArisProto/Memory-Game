@@ -148,6 +148,7 @@ function timerStart() {
 
 function timerStop(){
   status = 0;
+}
 
 function timerReset(){
   time = 0;
