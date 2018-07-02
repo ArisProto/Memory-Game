@@ -10,7 +10,7 @@ const resetGame = document.querySelector(".restart");
 
 // setting variables for Timer
 
-let status = 0;
+let position = 0;
 let time = 0;
 let minutes = Math.floor(time/100/60);
 let seconds = Math.floor(time/100);
@@ -145,16 +145,16 @@ flip();
 // timer | help from: https://www.w3schools.com/js/js_timing.asp
 
 function timerStart() {
-  status = 1;
+  position = 1;
 }
 
 function timerStop(){
-  status = 0;
+  position = 0;
 }
 
 function timerReset(){
   time = 0;
-  status = 0;
+  position = 0;
 }
 
 function timer(){
