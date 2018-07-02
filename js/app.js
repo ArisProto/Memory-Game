@@ -216,9 +216,9 @@ function winGame() {
 
     function plurificationStar(){
      if(howManyStars.length === 1){
-       return starsString = " Star";
+       return plurificationStar = " Star";
      } else {
-       return starsString = " Stars";
+       return plurificationStar = " Stars";
      }
     }
 
