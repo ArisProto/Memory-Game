@@ -64,6 +64,8 @@ function loop(){
   }
 }
 
+loop();
+
 // Selecting a card + flip
 
 function flip(){
