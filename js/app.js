@@ -216,7 +216,8 @@ function winGame() {
     // add text
     h1Html.innerText = 'Congratulations!' + ' \n ' + 'You Successfully Finished the Memory!';
     h2Html.innerText = 'Here are your stats';
-    pHtml.innerText = 'It took you ' + moves.innerHTML + ' moves (' + howManyStars.length + plurificationStar() + '),\n ' + minutes + ' minutes and ' + seconds + ' seconds to complete the game!';
+    pHtml.innerText = `It took you ${moves.innerHTML} moves (${howManyStars.length + plurificationStar()})
+    ${minutes} minutes and ${seconds} seconds to complete the game!`;
 
     function plurificationStar(){
      if(howManyStars.length === 1){
