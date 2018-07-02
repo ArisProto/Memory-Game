@@ -5,18 +5,19 @@ const MyDeck = MyCards.concat(MyCards);
 
 // setting variables for Timer
 
-const timeCounter = document.querySelector(".timer");
-
 let time;
 let minutes = 0;
 let seconds = 0;
 let timeStart = false;
 
+const timeCounter = document.querySelector(".timer");
+
 // setting variables for move Movecounter
 
-const movesCount = document.querySelector(".moves-counter");
+let countMoves = 0;
 
-let moves = 0;
+const moves = document.querySelector('.moves-counter');
+moves.innerHTML = countMoves;
 
 // setting variables for the Rating
 
@@ -27,8 +28,6 @@ let starCount = 3;
 
 // setting variables for flipping and matching
 
-const allCards = document.querySelectorAll('.deck li');
-
 let HowManyTimes = 0;
 let matchingCards = 0;
 let firstCard = '';
@@ -36,11 +35,13 @@ let secondCard = '';
 let firstParentCard = '';
 let secondParentCard = '';
 
+const allCards = document.querySelectorAll('.deck li');
+
 //setting variables for winning
 
-const winWindow = document.createElement('div');
-
 let container = document.querySelector('.container');
+
+const winWindow = document.createElement('div');
 
 // setting variables for resetting
 
@@ -77,61 +78,71 @@ function flip(){
   for(let i = 0; i < MyDeck.length; i++){
     allCards[i].addEventListener('click', function(evt){
       let targetClass = evt.target.className;
-      if (timeStart === false) {
-        timeStart = true;
-      } if(targetClass == "card" && HowManyTimes != 2){
+       if(targetClass == "card" && HowManyTimes != 2){
         allCards[i].className = ('class', 'card open show');
-      } if(firstCard == false ){
-        firstCard = evt.target.firstElementChild.className;
-        firstParentCard = evt.target;
-        HowManyTimes += 1;
-      } else {
-        secondCard = evt.target.firstElementChild.className;
-        secondParentCard = evt.target;
-        HowManyTimes += 1;
+        countMoves += 1;
+        moves.innerHTML = countMoves;
+        if(firstCard == false ){
+          firstCard = evt.target.firstElementChild.className;
+          firstParentCard = evt.target;
+          HowManyTimes += 1;
+        } else {
+          secondCard = evt.target.firstElementChild.className;
+          secondParentCard = evt.target;
+          HowManyTimes += 1;
+        }
 
       // Comparing the Cards
-
-      } function doTheyMatch(){
-        if(HowManyTimes === 2){
-          if(secondCard == firstCard){
-            matchingCards += 2;
-          }
-        } setTimeout(() => {
+        function doTheyMatch(){
           if(HowManyTimes === 2){
             if(secondCard == firstCard){
-              firstParentCard.className = 'card open match';
-              secondParentCard.className = 'card open match';
-              HowManyTimes *= 0;
-              firstCard = '';
-              secondCard = '';
-              firstParentCard = '';
-              secondParentCard = '';
-            } else {
-              firstParentCard.className = 'card';
-              secondParentCard.className = 'card';
-              HowManyTimes *= 0;
-              firstCard = '';
-              secondCard = '';
-              firstParentCard = '';
-              secondParentCard = '';
+              matchingCards += 2;
             }
-          };
-        }, 500);
+          } setTimeout(() => {
+              if(HowManyTimes === 2){
+                if(secondCard == firstCard){
+                  firstParentCard.className = 'card open match';
+                  secondParentCard.className = 'card open match';
+                  HowManyTimes *= 0;
+                  firstCard = '';
+                  secondCard = '';
+                  firstParentCard = '';
+                  secondParentCard = '';
+                } else {
+                    firstParentCard.className = 'card';
+                    secondParentCard.className = 'card';
+                    HowManyTimes = 0;
+                    firstCard = '';
+                    secondCard = '';
+                    firstParentCard = '';
+                    secondParentCard = '';
+                  }
+              };
+            }, 500);
+          }
+        doTheyMatch();
       }
-      doTheyMatch();
-      movesCounter();
+    });
+    allCards[i].onclick = (function(){
       Rating();
+      const getTime = document.querySelector('.timer');
+      if(countMoves === 1){
+        if(getTime.innerText == "00:00"){
+          startTimer();
+          timer();
+        }
+      }
       winGame();
-    })
-  }
+    });
+  };
 }
+flip();
+
 
 // Calling the functions
-
-flip();
+movesCounter();
 loop();
-timer();
+
 
 
 // timer | used: Used: https://www.w3schools.com/js/js_timing.asp
@@ -144,13 +155,6 @@ function timer() {
 			seconds = 0;
 		} timeCounter.innerHTML = "<i class='fas fa-stopwatch'></i>" + " Timer: " + minutes + " min " + seconds + " sec" ;
 	}, 1000);
-}
-
-// move counter
-
-function movesCounter() {
-	movesCount.innerHTML ++;
-	moves ++;
 }
 
 // Rating
@@ -226,7 +230,8 @@ function reset(){
   resetGame.onclick = (function(){
     for(let i = 0; i < MyDeck.length; i++){
       allCards[i].setAttribute('class', 'card');
-    } HowManyTimes *= 0;
+    }
+      HowManyTimes = 0;
       firstCard = '';
       secondCard = '';
       firstParentCard = '';
