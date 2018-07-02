@@ -178,10 +178,10 @@ function timer(){
 // Rating
 
 function Rating() {
-	if (moves.innerHTML === 30) {
+	if (movesCounter === 30) {
 		star[2].firstElementChild.classList.remove("fa-star");
 		starCount--;
-	} if (moves.innerHTML === 40) {
+	} if (movesCounter === 40) {
 		star[1].firstElementChild.classList.remove("fa-star");
 		starCount--;
 	}
