@@ -188,7 +188,7 @@ function Rating() {
 // Win the Game!
 
 function winGame() {
-	if (matchingCards === 16) {
+	if (matchingCards == 16) {
 
     // create html
     const divHtml = document.createElement('div');
