@@ -8,7 +8,6 @@ const MyDeck = MyCards.concat(MyCards);
 let time;
 let minutes = 0;
 let seconds = 0;
-let timeStart = false;
 
 const timeCounter = document.createElement('div');
 timeCounter.setAttribute('class', 'timer');
@@ -141,7 +140,7 @@ function flip(){
 }
 flip();
 
-// timer | used: Used: https://www.w3schools.com/js/js_timing.asp
+// timer | help from: https://www.w3schools.com/js/js_timing.asp
 
 function timerStart() {
   status = 1;
@@ -162,6 +161,7 @@ function timer() {
       minutes++;
 			seconds = 0;
 		} timeCounter.innerHTML = "<i class='fas fa-stopwatch'></i>" + " Timer: " + minutes + " min " + seconds + " sec" ;
+      timer();
 	}, 1000);
 }
 
@@ -177,14 +177,10 @@ function Rating() {
 	}
 }
 
-function stopTime() {
-	clearInterval(time);
-}
-
 // Win the Game!
 
 function winGame() {
-	if (matchingCards == 16) {
+	if (matchingCards === 16) {
 
     // create html
     const divHtml = document.createElement('div');
@@ -210,7 +206,7 @@ function winGame() {
     pHtml.innerText = 'It took you ' + moves + ' moves (' + howManyStars.length + plurificationStar() + '),\n ' + minutes + ' minutes and ' + seconds + ' seconds to complete the game!';
 
     function plurificationStar(){
-     if(howManyStars.length == 1){
+     if(howManyStars.length === 1){
        return starsString = " Star";
      } else {
        return starsString = " Stars";
@@ -227,7 +223,7 @@ function winGame() {
 
     // call functions
     matchingCards = 0;
-    stopTime();
+    timerStop();
     reset();
 	}
 }
