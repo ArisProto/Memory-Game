@@ -10,9 +10,8 @@ const resetGame = document.querySelector(".restart");
 
 // setting variables for Timer
 
-let time;
-let minutes = 0;
-let seconds = 0;
+let minutes = Math.floor(time/100/60);
+let seconds = Math.floor(time/100);
 
 const timeCounter = document.createElement('div');
 timeCounter.setAttribute('class', 'timer');
@@ -156,15 +155,21 @@ function timerReset(){
   status = 0;
 }
 
-function timer() {
-	time = setInterval(function() {
-		seconds++;
-		if (seconds === 60) {
-      minutes++;
-			seconds = 0;
-		} timeCounter.innerHTML = "<i class='fas fa-stopwatch'></i>" + " Timer: " + minutes + " min " + seconds + " sec" ;
+function timer(){
+  if( status == 1){
+    setTimeout(() => {
+      time++;
+      if(min < 10){
+        min = "0" + min;
+      } if(sec >= 60){
+        sec = sec % 60;
+      } if(sec < 10){
+        sec = "0" + sec;
+      }
+      timeCounter.innerHTML = "<i class='fas fa-stopwatch'></i>" + " Timer: " + minutes + " min " + seconds + " sec" ;
       timer();
-	}, 1000);
+    }, 10);
+  }
 }
 
 // Rating
