@@ -84,7 +84,7 @@ function flip(){
         allCards[i].className = ('class', 'card open show');
         countMoves += 1;
         moves.innerHTML = countMoves;
-        if(firstCard == false ){
+        if(firstCard === false ){
           firstCard = evt.target.firstElementChild.className;
           firstParentCard = evt.target;
           HowManyTimes += 1;
