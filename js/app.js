@@ -49,8 +49,6 @@ const allCards = document.querySelectorAll('.deck li');
 
 let container = document.querySelector('.container');
 
-const winWindow = document.createElement('div');
-
 // Shuffle function from http://stackoverflow.com/a/2450976
 
 const shuffleCards = shuffle(MyDeck);
