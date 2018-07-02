@@ -57,9 +57,10 @@ function shuffle(array) {
 // ------------------------
 
 const fasCards = document.querySelectorAll(".card i");
-  function loop(){
-    for(let i = 0; i < MyDeck.length; i++){
-      fasCards[i].setAttribute('class', shuffleCards[i]);
+
+function loop(){
+  for(let i = 0; i < MyDeck.length; i++){
+    fasCards[i].setAttribute('class', shuffleCards[i]);
   }
 }
 
