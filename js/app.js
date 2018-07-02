@@ -10,10 +10,10 @@ const resetGame = document.querySelector(".restart");
 
 // setting variables for move Movecounter
 
-let countMoves = 0;
+let movesCounter = 0;
 
 const moves = document.querySelector('.moves-counter');
-moves.innerHTML = countMoves;
+moves.innerHTML = movesCounter;
 
 // setting variables for the Rating
 
@@ -71,8 +71,8 @@ function flip(){
       let targetClass = evt.target.className;
        if(targetClass == "card" && HowManyTimes != 2){
         allCards[i].className = ('class', 'card open show');
-        countMoves += 1;
-        moves.innerHTML = countMoves;
+        movesCounter += 1;
+        moves.innerHTML = movesCounter;
         if(firstCard == false ){
           firstCard = evt.target.firstElementChild.className;
           firstParentCard = evt.target;
@@ -117,7 +117,7 @@ function flip(){
     allCards[i].onclick = (function(){
       Rating();
       const recieveTime = document.querySelector('.timer');
-      if(countMoves == 1){
+      if(movesCounter == 1){
         if(recieveTime.innerText === "00:00"){
           timerStart();
           timer();
@@ -157,7 +157,7 @@ function timerReset(){
 }
 
 function timer(){
-  if( status == 1){
+  if( position == 1){
     setTimeout(() => {
       time++;
       if(minutes < 10){
@@ -249,13 +249,14 @@ function reset(){
       firstParentCard = '';
       secondParentCard = '';
 
+      // reset moves
+      moves.innerHTML = 0;
+      movesCounter = 0
+
        // reset Rating
       star[1].firstElementChild.classList.add("fa-star");
 	    star[2].firstElementChild.classList.add("fa-star");
 	    starCount = 3;
-
-	    // reset moves
-	    moves.innerHTML = 0;
 
       // shuffle all cards again
       flip();
