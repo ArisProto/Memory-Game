@@ -1,20 +1,15 @@
 # Memory Game Project
 
-## Table of Contents
+Welcome to my very first Memory Card Game!
 
-* [Instructions](#instructions)
-* [Contributing](#contributing)
+The Game is extremely simple. It consists of 8 pairs of cards with icons. Click on a card to reaveal it. Match 2 cards together inorder to get a point. Try and finish the memory in as few movements possible. You'll be judged based on movements made. Try and get 3 Stars!
 
-## Instructions
+##Dependancies:
 
-The starter project has some HTML and CSS styling to display a static version of the Memory Game project. You'll need to convert this project from a static project to an interactive one. This will require modifying the HTML and CSS files, but primarily the JavaScript file.
+This game is dependant on Google Fonts and Font Awesome.
 
-To get started, open `js/app.js` and start building out the app's functionality
+##How to Use
 
-For specific, detailed instructions, look at the project instructions in the [Udacity Classroom](https://classroom.udacity.com/me).
+Just download the zip file and open up the Index.html file inside your browser. You should be good to go!
 
-## Contributing
-
-This repository is the starter code for _all_ Udacity students. Therefore, we most likely will not accept pull requests.
-
-For details, check out [CONTRIBUTING.md](CONTRIBUTING.md).
+Alternatively just visit: [My Memory Project](https://arisproto.github.io/Memory-Game/)
