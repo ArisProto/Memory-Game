@@ -3,6 +3,11 @@
 const MyCards = ["fas fa-ambulance", "fas fa-fighter-jet", "fas fa-anchor","fas fa-child", "fas fa-chess-knight", "fas fa-archway", "fas fa-feather", "fas fa-dove"];
 const MyDeck = MyCards.concat(MyCards);
 
+
+// setting variables for resetting
+
+const resetGame = document.querySelector(".restart");
+
 // setting variables for Timer
 
 let time;
@@ -44,10 +49,6 @@ const allCards = document.querySelectorAll('.deck li');
 let container = document.querySelector('.container');
 
 const winWindow = document.createElement('div');
-
-// setting variables for resetting
-
-const resetGame = document.querySelector(".restart");
 
 // Shuffle function from http://stackoverflow.com/a/2450976
 
