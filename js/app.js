@@ -161,12 +161,12 @@ function timer(){
   if( status == 1){
     setTimeout(() => {
       time++;
-      if(min < 10){
-        min = "0" + min;
-      } if(sec >= 60){
-        sec = sec % 60;
-      } if(sec < 10){
-        sec = "0" + sec;
+      if(minutes < 10){
+        minutes = "0" + minutes;
+      } if(seconds >= 60){
+        seconds = seconds % 60;
+      } if(seconds < 10){
+        seconds = "0" + seconds;
       }
       timeCounter.innerHTML = "<i class='fas fa-stopwatch'></i>" + " Timer: " + minutes + " min " + seconds + " sec" ;
       timer();
