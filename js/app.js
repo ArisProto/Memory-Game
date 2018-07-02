@@ -117,7 +117,7 @@ function flip(){
     allCards[i].onclick = (function(){
       Rating();
       const recieveTime = document.querySelector('.timer');
-      if(countMoves === 1){
+      if(countMoves == 1){
         if(recieveTime.innerText === "00:00"){
           timerStart();
           timer();
