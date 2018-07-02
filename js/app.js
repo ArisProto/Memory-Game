@@ -232,6 +232,7 @@ function winGame() {
 
 function reset(){
   resetGame.onclick = (function(){
+    timerReset();
     for(let i = 0; i < MyDeck.length; i++){
       allCards[i].setAttribute('class', 'card');
     }
