@@ -133,8 +133,6 @@ flip();
 
 let position = 0;
 let time = 0;
-let minutes = Math.floor(time/100/60);
-let seconds = Math.floor(time/100);
 
 const timeCounter = document.createElement('div');
 timeCounter.setAttribute('class', 'timer');
@@ -160,15 +158,16 @@ function timer(){
   if( position == 1){
     setTimeout(() => {
       time++;
+      let minutes = Math.floor(time/100/60);
+      let seconds = Math.floor(time/100);
       if(minutes < 10){
         minutes = "0" + minutes;
       } if(seconds >= 60){
         seconds = seconds % 60;
       } if(seconds < 10){
         seconds = "0" + seconds;
-      }
-      timeCounter.innerHTML = "<i class='fas fa-stopwatch'></i> " + minutes + ":" + seconds;
-      timer();
+      } timeCounter.innerHTML = "<i class='fas fa-stopwatch'></i> " + minutes + ":" + seconds;
+        timer();
     }, 10);
   }
 }
