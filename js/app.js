@@ -8,18 +8,6 @@ const MyDeck = MyCards.concat(MyCards);
 
 const resetGame = document.querySelector(".restart");
 
-// setting variables for Timer
-
-let position = 0;
-let time = 0;
-let minutes = Math.floor(time/100/60);
-let seconds = Math.floor(time/100);
-
-const timeCounter = document.createElement('div');
-timeCounter.setAttribute('class', 'timer');
-resetGame.insertAdjacentElement('beforebegin', timeCounter);
-timeCounter.innerText = "00:00";
-
 // setting variables for move Movecounter
 
 let countMoves = 0;
@@ -140,6 +128,18 @@ function flip(){
   };
 }
 flip();
+
+// setting variables for Timer
+
+let position = 0;
+let time = 0;
+let minutes = Math.floor(time/100/60);
+let seconds = Math.floor(time/100);
+
+const timeCounter = document.createElement('div');
+timeCounter.setAttribute('class', 'timer');
+resetGame.insertAdjacentElement('beforebegin', timeCounter);
+timeCounter.innerText = "00:00";
 
 // timer | help from: https://www.w3schools.com/js/js_timing.asp
 
