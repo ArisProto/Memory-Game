@@ -118,17 +118,17 @@ function flip(){
                     secondParentCard = '';
                   }
               };
-            }, 500);
+            }, 1000);
           }
         doTheyMatch();
       }
     });
     allCards[i].onclick = (function(){
       Rating();
-      const getTime = document.querySelector('.timer');
+      const recieveTime = document.querySelector('.timer');
       if(countMoves === 1){
-        if(getTime.innerText == "00:00"){
-          startTimer();
+        if(recieveTime.innerText == "00:00"){
+          timerStart();
           timer();
         }
       }
@@ -139,6 +139,18 @@ function flip(){
 flip();
 
 // timer | used: Used: https://www.w3schools.com/js/js_timing.asp
+
+function timerStart() {
+  status = 1;
+}
+
+function timerStop(){
+  status = 0;
+
+function timerReset(){
+  time = 0;
+  status = 0;
+}
 
 function timer() {
 	time = setInterval(function() {
