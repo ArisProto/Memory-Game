@@ -138,13 +138,6 @@ function flip(){
 }
 flip();
 
-
-// Calling the functions
-movesCounter();
-loop();
-
-
-
 // timer | used: Used: https://www.w3schools.com/js/js_timing.asp
 
 function timer() {
