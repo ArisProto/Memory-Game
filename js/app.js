@@ -10,6 +10,8 @@ const resetGame = document.querySelector(".restart");
 
 // setting variables for Timer
 
+let status = 0;
+let time = 0;
 let minutes = Math.floor(time/100/60);
 let seconds = Math.floor(time/100);
 
