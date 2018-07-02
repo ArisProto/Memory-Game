@@ -167,7 +167,7 @@ function timer(){
       } if(seconds < 10){
         seconds = "0" + seconds;
       }
-      timeCounter.innerHTML = "<i class='fas fa-stopwatch'></i>" + " Timer: " + minutes + " min " + seconds + " sec" ;
+      timeCounter.innerHTML = "<i class='fas fa-stopwatch'></i> " + minutes + ":" + seconds;
       timer();
     }, 10);
   }
