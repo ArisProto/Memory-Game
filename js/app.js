@@ -10,7 +10,10 @@ let minutes = 0;
 let seconds = 0;
 let timeStart = false;
 
-const timeCounter = document.querySelector(".timer");
+const timeCounter = document.createElement('div');
+timeCounter.setAttribute('class', 'timer');
+resetGame.insertAdjacentElement('beforebegin', timeCounter);
+timeCounter.innerText = "00:00";
 
 // setting variables for move Movecounter
 
@@ -127,7 +130,7 @@ function flip(){
       Rating();
       const recieveTime = document.querySelector('.timer');
       if(countMoves === 1){
-        if(recieveTime.innerText == "00:00"){
+        if(recieveTime.innerText === "00:00"){
           timerStart();
           timer();
         }
