@@ -235,8 +235,7 @@ function reset(){
     timerReset();
     for(let i = 0; i < MyDeck.length; i++){
       allCards[i].setAttribute('class', 'card');
-    }
-      HowManyTimes = 0;
+    } HowManyTimes = 0;
       firstCard = '';
       secondCard = '';
       firstParentCard = '';
