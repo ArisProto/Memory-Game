@@ -249,7 +249,7 @@ function reset(){
 	    starCount = 3;
 
 	    // reset moves
-	    movesCount.innerHTML = 0;
+	    moves.innerHTML = 0;
 
       // shuffle all cards again
       flip();
