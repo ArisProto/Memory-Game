@@ -242,21 +242,12 @@ function reset(){
       firstParentCard = '';
       secondParentCard = '';
 
-      //reset all stars
-
-      stopTime();
-	    timeStart = false;
-	    seconds = 0;
-	    minutes = 0;
-      timeCounter.innerHTML = "<i class='fa fas fa-stopwatch'></i>" + " Timer: 00:00";
-
        // reset Rating
       star[1].firstElementChild.classList.add("fa-star");
 	    star[2].firstElementChild.classList.add("fa-star");
 	    starCount = 3;
 
 	    // reset moves
-	    moves = 0;
 	    movesCount.innerHTML = 0;
 
       // shuffle all cards again
