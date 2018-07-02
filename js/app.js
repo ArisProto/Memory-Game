@@ -189,6 +189,9 @@ function Rating() {
 function winGame() {
 	if (matchingCards == 16) {
 
+    let minutes = Math.floor(time/100/60);
+    let seconds = (Math.floor(time/100)) % 60;
+
     // create html
     const divHtml = document.createElement('div');
     const h1Html = document.createElement('h1');
