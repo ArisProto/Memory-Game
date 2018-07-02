@@ -33,6 +33,7 @@ const star = document.getElementById("stars").querySelectorAll(".star");
 
 let howManyStars = document.getElementsByClassName('fa fa-star');
 let starCount = 3;
+let starPlur = '';
 
 // setting variables for flipping and matching
 
@@ -214,9 +215,9 @@ function winGame() {
 
     function plurificationStar(){
      if(howManyStars.length === 1){
-       return plurificationStar = " Star";
+       return starPlur = " Star";
      } else {
-       return plurificationStar = " Stars";
+       return starPlur = " Stars";
      }
     }
 
